@@ -1,0 +1,115 @@
+Node.js Essentials - App Routing - Simple Calculator :
+
+Create API for a simple calculator app using Node.js
+
+Create an http server and provide the following endpoints:
+
+    URL: http://localhost:8000
+
+1.  /cal?func=add&a=50&b=20 -> GET Method -> This route should add value of "a" and "b".
+
+    Expected response:
+        Addition is: 70
+
+ 
+2.  /cal?func=subtract&a=50&b=20 -> GET Method -> This route should subtract value of "a" and "b".
+
+    Expected response: 
+        Subtraction is: 30
+
+ 
+3.  /cal?func=multiple&a=50&b=20 -> GET Method -> This route should multiply value of "a" and "b".
+
+    Expected response: 
+        Multiplication is: 1000
+
+ 
+4.  /cal?a=50&b=20 -> GET Method -> This route should divide value of "a" and "b".
+
+    Expected response: 
+        Division is: 2.5
+
+--------------------------------------------------
+
+
+
+
+var http = require('http');
+const url = require('url');
+
+//write your code here
+
+function sum( query , res) {
+    var ans = query.a + query.b;
+    res.writeHead(200);
+    res.end(`Addition is: ${String(ans)}`);
+}
+
+function sub(query, res) {
+    var ans = query.a - query.b;
+    res.writeHead(200);
+    res.end(`Subtraction is: ${String(ans)}`);
+}
+
+function mul(query, res) {
+    var ans = query.a * query.b;
+    res.writeHead(200);
+    res.end(`Multiplication is: ${String(ans)}`);
+}
+function div(query, res) {
+    var ans = query.a / query.b;
+    res.writeHead(200);    
+    res.end(`Division is: ${String(ans)}`);
+}
+function home(query, res) {
+    res.writeHead(200);
+    res.end(``);
+}
+
+const handle = {};
+handle['add'] = sum;
+handle['subtract'] = sub;
+handle['multiple'] = mul;
+handle['div'] = div;
+handle['home'] = home;
+
+function server(route) {
+    var port = 8000;
+    const server = http.createServer(function (req, res) {
+        var pathname = url.parse(req.url).pathname;
+        if (pathname != '/favicon.ico') {
+            var query = url.parse(req.url, true).query;
+            var query = {
+                func: String(query.func),
+                a: Number(query.a),
+                b: Number(query.b),
+            }
+            route(handle, pathname, query, res);
+        }
+    });
+    server.listen(port, 'localhost', (err) => {
+        if (err) {
+            return console.log('something bad happened', err)
+        }        
+    });
+}
+
+function route(handle, pathname, query, res) {
+    var func = query.func;
+    if (pathname === '/') {
+        func = 'home';
+    }
+    else if (func === "undefined" && query.a != "undefined" && query.b != "undefined") {
+        func = 'div';        
+    }
+    else if (pathname === '/cal') {
+    }
+    else {
+        func = 'home';
+        
+    }
+    handle[func](query, res);
+}
+server(route);
+
+
