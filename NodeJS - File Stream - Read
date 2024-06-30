@@ -1,0 +1,25 @@
+Node.js Essentials - Stream read:
+
+- Write a code snippet to read the large data file data_file.txt using streams.
+- Also log the sizes/length of chunks of data read, to the console.
+- Write the implementation code in App.js file.
+
+--------------------------------------------------
+
+//write your code here
+
+var fs = require("fs");
+var data = '';
+var readerStream = fs.createReadStream('data_file.txt');
+readerStream.setEncoding('UTF8');
+readerStream.on('data', function(chunk) {
+   data += chunk;
+   console.log(chunk.length);
+});
+readerStream.on('end',function() {
+   console.log(data.length);
+});
+
+
+
+
