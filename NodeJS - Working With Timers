@@ -1,0 +1,13 @@
+function logString(stringToLog) {
+    //Enter your code here    
+    setTimeout(function () {
+        console.log(`Logging ${stringToLog} every 0.5 seconds`)
+    }, 300);
+    mainInterval = setInterval(function () {
+        console.log(stringToLog);
+    }, 500);
+    setTimeout(function () {
+        clearInterval(mainInterval);
+        return;
+    }, 2600);
+} 
