@@ -1,0 +1,15 @@
+Node.js Essentials - Stream Write:
+
+- Using streams, write a string "Node.js is an ultimate backend javascript for backend development" into a file named Big_data.txt.
+- Write your implementation code in App.js file.
+- It is important to use streams while writing the data to the file.
+
+--------------------------------------------------
+
+//write your code here
+
+const fs = require('fs');
+const writeData = "Node.js is an ultimate backend javascript for backend development";
+const writableStream = fs.createWriteStream("Big_data.txt");
+writableStream.write(writeData, 'utf-8');
+writableStream.end();
