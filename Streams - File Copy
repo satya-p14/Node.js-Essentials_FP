@@ -1,0 +1,17 @@
+Node.js Essentials - Stream copy:
+
+- Create the files data_file.txt, new_data_file.txt in the root folder.
+- Save the content "nodejs streams" to data_file.txt.
+- Write a code in App.js to copy the contents of data_file.txt to new_data_file.txt.
+- It is important to use streams while writing the data to the file.
+
+--------------------------------------------------
+//write your code here
+
+const fs = require('fs');
+const rs = fs.createReadStream('data_file.txt');
+const ws = fs.createWriteStream('new_data_file.txt');
+rs.pipe(ws);
+
+
+
