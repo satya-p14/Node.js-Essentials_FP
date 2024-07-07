@@ -20,6 +20,30 @@ A stream fires end event when there is no more data to read. : True
 
 What is the use of Underscore Variable in REPL session? : To get the last result
 
+Which of the following commands will show all the modules installed locally?  npm ls
+
+Which of the following commands will show the version of the Node? : node --version
+
+Print the relative path of your script using the predefined global object ______________. console.log( __filename );
+
+Which of the following is true about console global object? : 
+
+Which of the following modules is required for operating system specific operations? : os module
+
+What is use of Tab keys in REPL?  : 
+
+Which of the following is true about RESTful webservices? both
+    (I) Webservices based on REST Architecture are known as RESTful web services. 
+    (II) Webservices use HTTP methods to implement the concept of REST architecture.
+
+Which of the following is true about File I/O in Node applications? both
+    (I) Node implements File I/O using simple wrappers around standard POSIX functions. 
+    (II) Node File System (fs) module should be imported for File I/O operations.
+
+Which of the following is true about __dirname global object?  ( I )
+  (I) The __dirname represents the name of the directory that the currently executing script resides in. 
+  (II) The __dirname represents the resolved absolute path of code file.
+
 
 
 
