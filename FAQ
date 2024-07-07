@@ -1,0 +1,12 @@
+Which method of fs module is used to truncate a file?  : None of the above
+
+Which method of fs module is used to write a file?  fs.writeFile(path, flags[, mode], callback)
+
+Which of the following is true about EventEmitter.emit property? : It is used to fire an event
+
+Which of the following is true about EventEmitter.on property? : It is used to bind a function with the event
+
+Which method of fs module is used to close a file?  : fs.close(fd, callback)
+
+We can get an http module in a node based application using _______ : var http = require("http");
+
