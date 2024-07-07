@@ -18,3 +18,9 @@ Which of the following is true about a writable stream? (I) A writable stream is
 
 A stream fires end event when there is no more data to read. : True
 
+What is the use of Underscore Variable in REPL session? : To get the last result
+
+
+
+
+
