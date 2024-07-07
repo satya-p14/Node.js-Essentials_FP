@@ -1,0 +1,27 @@
+process.stdin.resume();
+process.stdin.setEncoding("ascii");
+var input = "";
+process.stdin.on("data", function (chunk) {
+    input += chunk;
+});
+process.stdin.on("end", function () {
+    // now we can read/parse input
+    largestPrimeFactor(input)
+});
+
+function largestPrimeFactor(number) {
+    //enter your code here
+    
+    let largest = 1;
+    let current = 2;
+
+    while (current <= number) {
+        if (number % current === 0) {
+            largest = current;
+            number /= current;
+        } else {
+            current++;
+        }
+    }
+    console.log(largest);
+}
