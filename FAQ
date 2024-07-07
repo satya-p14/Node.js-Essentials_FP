@@ -14,7 +14,9 @@ A stream fires a data event when there is data available to read. : True
 
 Each type of Stream is an EventEmitter. : True
 
-Which of the following is true about a writable stream? (I) A writable stream is used for write operation. (II) The output of a writable stream can be the input to a writable stream. : 
+Which of the following is true about a writable stream? 
+    (I) A writable stream is used for write operation.
+    (II) The output of a writable stream can be the input to a writable stream. : 
 
 A stream fires end event when there is no more data to read. : True
 
@@ -43,6 +45,30 @@ Which of the following is true about File I/O in Node applications? both
 Which of the following is true about __dirname global object?  ( I )
   (I) The __dirname represents the name of the directory that the currently executing script resides in. 
   (II) The __dirname represents the resolved absolute path of code file.
+
+
+---------------------------------------------------------------------------
+Node JS : 
+----------------------------------------------------------------------------
+
+1. Express supports middleware. Is this true or false? : true
+
+2. Node.js is built on top of Chrome's JavaScript runtime, ________ engine. : V8
+
+3. Express Framework provides support in rendering : Web Application
+
+4. While using Jade, if you would like to fetch data from another Jade file, use the syntax ________ : include
+
+5. In the Jade file, if you want to print the variable "Stdname", which of the following is the correct way of doing it ? 
+        var Stdname ="jade"; #{Stdname};
+
+6. The most common template engine used by the Express application generator is ________ : Jade
+
+7. Imagine you have to list all the subjects taught in a class in a sequential manner. 
+        Subjects = ["Science", "English", "Maths", "Social", "Moral"];
+    Which of the following options will list them with sequence numbers? : ul each name, i in Subjects li #{i+1}: #{name}
+
+8. Which of the following options has a more similar approach to JSPs, PHPs? : EJS
 
 
 
