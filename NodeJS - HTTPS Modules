@@ -1,0 +1,43 @@
+Node.js Essentials - HTTPS modules - Get the wiki page
+
+Use HTTPS modules to make request to https://en.wikipedia.org:443/wiki/Nodejs and 
+write the source code of the page into "Node.html".
+
+ 
+Note:  The Node.html file should be created only when the contents are getting written into it.
+
+ 
+Steps to do hands-on:
+
+1. Write your code in App.js
+2. You can run your application by executing "node App.js" command.
+3. You can test your app by clicking "Run Test Cases" button (or) Open terminal, go to /home/project folder, type the command “bash score.sh”.
+
+
+var https = require("https");
+var fs = require("fs");
+
+//Write your code here
+// https://en.wikipedia.org:443/wiki/Nodejs
+
+var writeStream = fs.createWriteStream('Node.html');
+
+const options = {
+    hostname: 'en.wikipedia.org',
+    port: 443,
+    path: '/wiki/Nodejs',
+    method: 'GET',
+};
+
+const req = https.request(options, res => {
+    res.on('data', d => {
+        writeStream.write(d, 'UTF8');
+    });
+});
+
+writeStream.on('finish', () => {
+    writeStream.end();
+});
+
+req.end();
+
