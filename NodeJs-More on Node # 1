@@ -5,12 +5,13 @@ process.stdin.on("data", function (chunk) {
     input += chunk;
 });
 
-
 process.stdin.on("end", function () {
     //write your code within the function
+    input = input.toLowerCase();
     let rev = input.split("").reverse().join(""); 
     if (rev == input) {
         console.log('true');
-    }
-    console.log('false');
+    }else{
+        console.log('false');    
+    }    
 });
