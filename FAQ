@@ -10,3 +10,11 @@ Which method of fs module is used to close a file?  : fs.close(fd, callback)
 
 We can get an http module in a node based application using _______ : var http = require("http");
 
+A stream fires a data event when there is data available to read. : True
+
+Each type of Stream is an EventEmitter. : True
+
+Which of the following is true about a writable stream? (I) A writable stream is used for write operation. (II) The output of a writable stream can be the input to a writable stream. : 
+
+A stream fires end event when there is no more data to read. : True
+
